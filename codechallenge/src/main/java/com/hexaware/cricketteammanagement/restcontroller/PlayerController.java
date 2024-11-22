@@ -72,6 +72,13 @@ public class PlayerController {
 	 return "Record of player deleted"+playerId;
 	}
 	
+	@GetMapping("/getByTeamName/{teamName}")
+	public List<Player> getByTeamName(@PathVariable String teamName)
+	{
+		return service.findByTeamName(teamName);
+		
+	}
+	
 
 }
 

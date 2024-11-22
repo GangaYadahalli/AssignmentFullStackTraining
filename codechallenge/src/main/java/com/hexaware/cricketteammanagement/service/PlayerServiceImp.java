@@ -70,6 +70,13 @@ public class PlayerServiceImp implements IPlayerService{
 		return repo.findAll();
 	}
 
+	@Override
+	public List<Player> findByTeamName(String teamName) {
+		
+		return repo.findByTeamName(teamName);
+	}
+
+
 
 
 }
