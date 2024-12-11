@@ -1,0 +1,40 @@
+<h1 style="color:goldenrod" class="container d-flex justify-content-center">Welcome To Cricket Page</h1>
+<style>
+   .navbar .nav-link {
+    color:  Yellow!important;
+  }
+  .navbar .nav-link:hover {
+    color: goldenrod !important; 
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" >
+  <div class="container d-flex justify-content-center">
+      
+    <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="addPlayer">AddPlayer</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="updatePlayer">UpdatePlayer</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="displayall">Display All Players</a>
+          </li>
+        </ul>
+
+      
+    </div>
+  </nav>
+
+
+
+
+
+  <router-outlet></router-outlet>
+
+
+ 

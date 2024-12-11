@@ -1,0 +1,16 @@
+<p>Displaying all player Details</p>
+
+
+
+<div class="container">
+    <table class="table table-primary col-sm-5">
+    
+       <tr><th>Sl.No</th><th>PlayerId</th><th>PlayerName</th><th>JerseyNumber</th><th>Roles</th><th>TotalMatches</th><th>TeamName</th><th>Country</th><th>description</th> <th>DELETE</th></tr> 
+    <tr *ngFor="let player of playerList; index as i"><td>{{i+1}}</td> <td>{{player.playerId}}</td><td>{{player.playerName}}</td><td>{{player.jerseyNumber}}</td> <td>{{player.roles}}</td><td>{{player.totalMatches}}</td><td>{{player.teamName}}</td><td>{{player.country}}</td> <td>{{player.description}}</td>
+    
+          <td><button type="button" class="btn btn-danger"  (click)="deleteById(player.playerId)" >Delete</button></td>
+    
+    </tr>
+    
+    </table>
+    </div>
