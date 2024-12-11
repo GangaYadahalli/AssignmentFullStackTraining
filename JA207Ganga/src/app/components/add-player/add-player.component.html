@@ -1,0 +1,65 @@
+<div class="container">
+    <h2>Add New Player</h2>
+    <form [formGroup]="addPlayerForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="playerName" class="form-label">Player Name</label>
+            <input id="playerName" formControlName="playerName" type="text" class="form-control">
+            <div *ngIf="addPlayerForm.controls['playerName'].invalid && addPlayerForm.controls['playerName'].touched" class="text-danger">
+                Player Name is required.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="jerseyNumber" class="form-label">Jersey Number</label>
+            <input id="jerseyNumber" formControlName="jerseyNumber" type="number" class="form-control">
+            <div *ngIf="addPlayerForm.controls['jerseyNumber'].invalid && addPlayerForm.controls['jerseyNumber'].touched" class="text-danger">
+                Jersey Number is required and must be a positive number.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <select id="role" formControlName="role" class="form-control" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="BATSMAN">BATSMAN</option>
+                <option value="BOWLER">BOWLER</option>
+                <option value="KEEPER">KEEPER</option>
+                <option value="ALLROUNDER">ALLROUNDER</option>
+            </select>
+            <div *ngIf="addPlayerForm.controls['role'].invalid && addPlayerForm.controls['role'].touched" class="text-danger">
+                Role is required.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="totalMatches" class="form-label">Total Matches</label>
+            <input id="totalMatches" formControlName="totalMatches" type="number" class="form-control">
+            <div *ngIf="addPlayerForm.controls['totalMatches'].invalid && addPlayerForm.controls['totalMatches'].touched" class="text-danger">
+                Total Matches is required and must be a positive number.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="teamName" class="form-label">Team Name</label>
+            <input id="teamName" formControlName="teamName" type="text" class="form-control">
+            <div *ngIf="addPlayerForm.controls['teamName'].invalid && addPlayerForm.controls['teamName'].touched" class="text-danger">
+                Team Name is required.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input id="country" formControlName="country" type="text" class="form-control">
+            <div *ngIf="addPlayerForm.controls['country'].invalid && addPlayerForm.controls['country'].touched" class="text-danger">
+                Country is required.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" formControlName="description" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]="addPlayerForm.invalid">Add Player</button>
+    </form>
+</div>

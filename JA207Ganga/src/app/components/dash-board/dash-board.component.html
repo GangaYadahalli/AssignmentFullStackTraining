@@ -25,6 +25,14 @@
             <a class="nav-link" routerLink="displayall">Display All Players</a>
           </li>
         </ul>
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <form class="d-flex"  #searchInput="ngForm" (ngSubmit)="find(searchInput)">
+              <input class="form-control me-2" type="search" name="data"  ngModel  placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
 
       
     </div>

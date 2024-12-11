@@ -32,6 +32,12 @@ import { HttpClient } from "@angular/common/http";
     updatePlayerById(playerId: number, player: Player): Observable<Player> {
         return this.http.put<Player>(`${this.baseURL}update/${playerId}`, player);
     }
-    
+    find(data:string):Observable<Player[]>{
+
+
+      console.log(data)
+     return this.http.get<Player[]>(this.baseURL+`getByTeamName/${data}`);
+
+    }
 
   }

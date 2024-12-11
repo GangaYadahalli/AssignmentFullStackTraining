@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { PlayersService } from './service/player.service';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PlayersService } from './service/player.service';
     AddPlayerComponent,
     DisplayPlayerComponent,
     UpdatePlayerComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
