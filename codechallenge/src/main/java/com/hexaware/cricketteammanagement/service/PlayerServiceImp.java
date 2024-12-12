@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.hexaware.cricketteammanagement.dto.PlayerDto;
 import com.hexaware.cricketteammanagement.entity.Player;
+import com.hexaware.cricketteammanagement.entity.Player.Role;
 import com.hexaware.cricketteammanagement.repository.PlayerRepository;
 
 import jakarta.transaction.Transactional;
@@ -21,10 +22,13 @@ public class PlayerServiceImp implements IPlayerService{
 	public Player addPlayer(PlayerDto playerDto) {
 		
 		Player player = new Player();
+		
+		Role role = Role.valueOf(playerDto.getRole());
+		
 		player.setPlayerId(playerDto.getPlayerId());
 		player.setPlayerName(playerDto.getPlayerName());
 		player.setJerseyNumber(playerDto.getJerseyNumber());
-		player.setRoles(Player.Role.valueOf(playerDto.getRoles().name()));
+		player.setRoles(role);
 		player.setTotalMatches(playerDto.getTotalMatches());
 		player.setTeamName(playerDto.getTeamName());
 		player.setCountry(playerDto.getCountry());
@@ -41,7 +45,7 @@ public class PlayerServiceImp implements IPlayerService{
 		player.setPlayerId(playerDto.getPlayerId());
 		player.setPlayerName(playerDto.getPlayerName());
 		player.setJerseyNumber(playerDto.getJerseyNumber());
-		player.setRoles(Player.Role.valueOf(playerDto.getRoles().name()));
+		player.setRoles(Player.Role.valueOf(playerDto.getRole()));
 		player.setTotalMatches(playerDto.getTotalMatches());
 		player.setTeamName(playerDto.getTeamName());
 		player.setCountry(playerDto.getCountry());

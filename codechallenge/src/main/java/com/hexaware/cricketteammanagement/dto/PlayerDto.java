@@ -1,6 +1,6 @@
 package com.hexaware.cricketteammanagement.dto;
 
-import com.hexaware.cricketteammanagement.entity.Player.Role;
+
 
 
 public class PlayerDto {
@@ -8,14 +8,15 @@ public class PlayerDto {
 	private Integer playerId;
 	private String playerName;
 	private Integer jerseyNumber;
-	private Role roles;
+	private String role;
 	private Integer totalMatches;
 	private String teamName;
 	private String country;
 	private String description;
-	public enum Role {
-		BATSMAN, BOWLER , KEEPER, ALLROUNDER
-	}
+	
+//	public enum Role {
+//		BATSMAN, BOWLER , KEEPER, ALLROUNDER
+//	}
 
 	public PlayerDto() {
 		super();
@@ -24,13 +25,13 @@ public class PlayerDto {
 
 
 	
-	public PlayerDto(Integer playerId, String playerName, Integer jerseyNumber, Role roles, Integer totalMatches,
+	public PlayerDto(Integer playerId, String playerName, Integer jerseyNumber, String role, Integer totalMatches,
 			String teamName, String country, String description) {
 		super();
 		this.playerId = playerId;
 		this.playerName = playerName;
 		this.jerseyNumber = jerseyNumber;
-		this.roles = roles;
+		this.role = role;
 		this.totalMatches = totalMatches;
 		this.teamName = teamName;
 		this.country = country;
@@ -81,16 +82,30 @@ public class PlayerDto {
 
 
 
+//
+//	public String getRoles() {
+//		return role;
+//	}
+//
+//
+//
+//
+//	public void setRoles(String roles) {
+//		this.role = role;
+//	}
 
-	public Role getRoles() {
-		return roles;
+
+
+
+	public String getRole() {
+		return role;
 	}
 
 
 
 
-	public void setRoles(Role roles) {
-		this.roles = roles;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 
@@ -155,9 +170,14 @@ public class PlayerDto {
 	@Override
 	public String toString() {
 		return "PlayerDto [playerId=" + playerId + ", playerName=" + playerName + ", jerseyNumber=" + jerseyNumber
-				+ ", roles=" + roles + ", totalMatches=" + totalMatches + ", teamName=" + teamName + ", country="
+				+ ", role=" + role + ", totalMatches=" + totalMatches + ", teamName=" + teamName + ", country="
 				+ country + ", description=" + description + "]";
 	}
+
+
+
+
+
 
 
 

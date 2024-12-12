@@ -92,9 +92,6 @@ public class Player {
 		this.playerName = playerName;
 	}
 
-
-
-
 	public Integer getJerseyNumber() {
 		return jerseyNumber;
 	}
